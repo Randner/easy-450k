@@ -14,12 +14,12 @@ empty_dirs:
 - Temp/
 
 file_dirs:
-- { from : illumina_450k/Scripts, to : 'Scripts' }
-- { from : illumina_450k/Core_Package, to : 'Scripts/Core_Package' }
-- { from : illumina_450k/Configs, to : 'Configs' }
+- { from : illumina_450k/Scripts, to : 'Scripts', overwrite_on_update : true }
+- { from : illumina_450k/Core_Package, to : 'Scripts/Core_Package', overwrite_on_update : true }
+- { from : illumina_450k/Configs, to : 'Configs', overwrite_on_update : false }
 
 files:
-- { from : illumina_450k/Makefile, to : 'Makefile' }
-- { from : illumina_450k/Readme.md, to : 'Readme.md' }
-- { from : illumina_450k/RProfile, to : '.Rprofile' }
-- { from : illumina_450k/report.Rmd, to : 'report.Rmd'}
+- { from : illumina_450k/Makefile, to : 'Makefile', overwrite_on_update : true }
+- { from : illumina_450k/Readme.md, to : 'Readme.md', overwrite_on_update : true }
+- { from : illumina_450k/RProfile, to : '.Rprofile', overwrite_on_update : true }
+- { from : illumina_450k/report.Rmd, to : 'report.Rmd', overwrite_on_update : true}
