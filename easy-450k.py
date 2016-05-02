@@ -61,7 +61,7 @@ def project_dir_exists(project_dir):
 def load_yaml_template(pars):
     return yaml.load(open(pars.template_path))
 
-def generate_yaml_subsection(pars, section_name, update=False):
+def generate_yaml_subsection(pars, section_name):
     yaml_template = load_yaml_template(pars)
     for yaml_entry in yaml_template[section_name]:
         source = os.path.join(pars.program_dir, yaml_entry['from'])

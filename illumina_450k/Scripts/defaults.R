@@ -59,3 +59,6 @@ if(defaults$analysis_params$type == "lm") {
 } else {
     stop("Unknown analysis type")
 }
+
+#--------- Plots
+defaults$pca_plot_after_combat <- "Plots/pca_plot.tiff"

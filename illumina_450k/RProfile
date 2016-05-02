@@ -2,6 +2,7 @@ library(utils)
 library(devtools)
 library(knitr)
 suppressWarnings(suppressMessages(library(methylumi)))
+library(ggplot2)
 
 ##------ install bioconductor packages
 devtools::load_all("Scripts/Core_Package")

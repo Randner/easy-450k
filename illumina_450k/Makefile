@@ -1,4 +1,9 @@
-all: Output/knitr_report.html
+all: Output/knitr_report.html plots
+
+plots : Plots/pca_plot.tiff
+
+Plots/pca_plot.tiff : Scripts/plot_pca.R
+		Rscript --no-save --no-restore --verbose Scripts/plot_pca.R
 
 Output/knitr_report.html: Temp/bmiq_dataset.RData Temp/preprocessed_dataset.RData Temp/dataset_loaded.RData Temp/combat_results.RData Results/analyzed_dataset.RData
 		Rscript --no-save --no-restore --verbose Scripts/generate_knitr_report.R

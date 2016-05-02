@@ -16,6 +16,6 @@ Imports:
     iterators,
     doMC,
     sva,
-    lambda.r
+    lambda.r,
 License: MIT license (see LICENSE file)
 LazyData: true
