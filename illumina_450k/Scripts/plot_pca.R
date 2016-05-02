@@ -1,12 +1,8 @@
 options(bitmapType='cairo')
-library(ggbiplot)
-
 combat_results <- readRDS(defaults$combat_path)
 
 pca_res <- prcomp(t(get_values(combat_results[[1]])))
 labels <- sampleNames.Dataset(combat_results[[1]])
-
-
 
 tiff(defaults$pca_plot_after_combat)
 ggplot(data=as.data.frame(pca_res$x),

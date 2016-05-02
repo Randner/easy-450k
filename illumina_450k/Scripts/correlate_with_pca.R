@@ -15,8 +15,6 @@ res <- t(apply(pca_res$rotation, 2, function(pca) {
     #nums <- adply(defaults$combat_numeric_names, 1, function(name) cor.test(as.numeric(get(name, defaults$combat_phenotypes_table)), pca)$p.value, .id=NULL)
     nums <- sapply(defaults$combat_numeric_names, function(name) cor.test(as.numeric(get(name, defaults$combat_phenotypes_table)), pca)$p.value)
     cats <- sapply(defaults$combat_categorical_names, function(name) kruskal.test(pca, as.factor(get(name, defaults$combat_phenotypes_table)))$p.value)
-
-
     c(nums, cats)
 }))
 write.table(res, file=defaults$pca_cor_report, sep="\t", quote=F, row.names=T, col.names=NA)
