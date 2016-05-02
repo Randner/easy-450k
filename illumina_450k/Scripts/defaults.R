@@ -60,5 +60,6 @@ if(defaults$analysis_params$type == "lm") {
     stop("Unknown analysis type")
 }
 
-#--------- Plots
+#--------- Plots and reports
 defaults$pca_plot_after_combat <- "Plots/pca_plot.tiff"
+defaults$pca_cor_report <- "Results/correlation_phenotypes_pca.txt"
