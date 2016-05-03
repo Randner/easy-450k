@@ -1,13 +1,13 @@
 combat_results <- readRDS(defaults$combat_path)
-pca_res <- prcomp(get_values(combat_results[[1]])
+pca_res <- prcomp(get_values(combat_results[[1]]))
 
 ## get phenotypes
-
-defaults$combat_phenotypes_table
-defaults$combat_batch_name
-defaults$combat_id_column_name
-defaults$combat_numeric_names
-defaults$combat_categorical_names
+#
+# defaults$combat_phenotypes_table
+# defaults$combat_batch_name
+# defaults$combat_id_column_name
+# defaults$combat_numeric_names
+# defaults$combat_categorical_names
 
 ## calculate correlation coefficients between top 10 principal components
 ## and other things
