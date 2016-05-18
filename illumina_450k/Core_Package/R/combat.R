@@ -37,6 +37,6 @@ combat <- function(meth_dataset, phenotypes_table, batch_name, id_column_name, n
     batch <- get(batch_name, phenotypes_table)
     corrected_data <- sva::ComBat(dat=meth_matrix, batch=get(batch_name, phenotypes_table), mod=mod) #, numCovs=1:length(numeric_names))
     meth_dataset <- set_values(meth_dataset, as.data.frame(corrected_data))
-    log <- paste("Perormed ComBat with model", gsub("\\s+", " ", Reduce(paste, deparse(cov_formula))))
+    log <- paste("Performed ComBat with model", gsub("\\s+", " ", Reduce(paste, deparse(cov_formula))))
     MonadWriter(meth_dataset, log)
 }

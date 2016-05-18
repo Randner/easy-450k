@@ -55,7 +55,7 @@ if(defaults$analysis_params$type == "lm") {
     group <- get(defaults$analysis_params$group, defaults$analysis_phenotypes_table)
     group <- as.numeric(as.factor(group))
     if(!(all(group %in% c(1, 2, -1)))) stop("More then 2 groups provided for wilcoxon test")
-    defaults$run_analysis_default <- Curry(run_wilcoxon, n_cores=defaults$analysis_params$n_cores, perform_fdr=T, group=group, paired=F, exact=F, correct=T)
+    defaults$run_analysis_default <- Curry(run_wilcoxon, n_cores=defaults$analysis_params$n_cores, perform_fdr=T, group=group, paired=defaults$analysis_params$paired, exact=defaults$analysis_params$exact, correct=T)
 } else {
     stop("Unknown analysis type")
 }
