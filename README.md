@@ -131,6 +131,7 @@ For wilcoxon test, make the config file that looks like this:
 	n_cores: 5
 	group: CaseControl_Column_Name
 	paired: false
+	exact: true
 	
 	
 Column with CategoricalA\_Column\_Name should contain only the following values: 1, 2, -1.
