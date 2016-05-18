@@ -33,7 +33,7 @@ PyYaml
 
 ### Installation ###
 
-git clone https://github.com/petr-volkov/project-templates
+git clone https://github.com/petr-volkov/easy-450k
 
 ### Usage ###
 
