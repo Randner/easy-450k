@@ -39,7 +39,7 @@ git clone https://github.com/petr-volkov/easy-450k
 
 1. Create a new project
         
-        python3 ${path_to_cloned_repo}/easy_450k.py project_name
+        python3 ${path_to_cloned_repo}/easy-450k.py project_name
         
 2. Edit configuration files
 
@@ -144,12 +144,12 @@ For linear regression tests, use the following:
 	n_cores: 46
 	covariates:
     numeric:
+		- NumericA_Column_Name
+		- NumericB_Column_Name
+    categorical:
 		- CategoricalA_Column_Name
 		- CategoricalB_Column_Name
 		- CategoricalC_Column_Name
-    categorical:
-		- NumericA_Column_Name
-		- NumericB_Column_Name
 
 This is file can be the same as Configs/combat.yaml, but it is not always the case. 
 Therefore, 2 perhaps very similar config files are needed, to avoid more complex logic.
