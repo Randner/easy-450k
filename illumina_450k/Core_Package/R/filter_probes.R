@@ -75,7 +75,7 @@ filter_probes <- function(ml_object, config) {
 
 .filter_det_pvals_mean <- function(ml_object, mean_threshold) {
     pvals <- .get_det_pvals(ml_object)
-    probes_to_filter <- apply(pvals, 1, mean) > mean_threshold
+    probes_to_filter <- apply(pvals, 1, mean) >= mean_threshold
     log <- paste("Filtered",
                  length(which(probes_to_filter)),
                  "probes on detection pvalue with mean threshold",
