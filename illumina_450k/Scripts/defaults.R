@@ -53,7 +53,7 @@ if(defaults$analysis_params$type == "lm") {
     defaults$run_analysis_default <- Curry(run_lm, n_cores=defaults$analysis_params$n_cores, perform_fdr=T, phenotypes_table=defaults$analysis_phenotypes_table, numeric_names=numeric_names, categorical_names=categorical_names)
 } else if (defaults$analysis_params$type == "wilcoxon") {
     group <- get(defaults$analysis_params$group, defaults$analysis_phenotypes_table)
-    group <- as.numeric(as.factor(group))
+    group <- as.numeric(group)
     if(!(all(group %in% c(1, 2, -1)))) stop("More then 2 groups provided for wilcoxon test")
     defaults$run_analysis_default <- Curry(run_wilcoxon, n_cores=defaults$analysis_params$n_cores, perform_fdr=T, group=group, paired=defaults$analysis_params$paired, exact=defaults$analysis_params$exact, correct=T)
 } else {
