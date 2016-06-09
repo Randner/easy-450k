@@ -4,7 +4,9 @@
 combat <- function(meth_dataset, phenotypes_table, batch_name, id_column_name, numeric_names=NULL, categorical_names=NULL) {
     ## extract methylation matrix from datataset
     meth_matrix <- get_values(meth_dataset)
-
+	
+	if (!is.null(batch_name)) {
+		
     ## do extra checking if all columns are in place
     if(!(id_column_name %in% names(phenotypes_table))) stop(.missmached_id_col_error)
     if(!(batch_name %in% names(phenotypes_table))) stop(.missmached_batch_name_error)
@@ -36,7 +38,15 @@ combat <- function(meth_dataset, phenotypes_table, batch_name, id_column_name, n
     mod <- model.matrix(cov_formula, data=phenotypes_table)
     batch <- get(batch_name, phenotypes_table)
     corrected_data <- sva::ComBat(dat=meth_matrix, batch=get(batch_name, phenotypes_table), mod=mod) #, numCovs=1:length(numeric_names))
+	
     meth_dataset <- set_values(meth_dataset, as.data.frame(corrected_data))
     log <- paste("Performed ComBat with model", gsub("\\s+", " ", Reduce(paste, deparse(cov_formula))))
     MonadWriter(meth_dataset, log)
+	} else {
+		corrected_data <- meth_matrix
+	
+    meth_dataset <- set_values(meth_dataset, as.data.frame(corrected_data))
+    log <- paste("Skipped ComBat")
+    MonadWriter(meth_dataset, log)
+	}
 }
