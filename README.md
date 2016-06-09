@@ -49,8 +49,8 @@ git clone https://github.com/petr-volkov/easy-450k
 
 #### Illumina 450k configuration options ####
 
-###### 1. Configs/preprocessing_samples.txt
-Includes a list of samples, line by line, to be included in the preprocessing.
+###### 1. Configs/analysis_samples.txt
+Includes a list of samples, line by line, to be included in the analysis.
 
 ###### 2. Configs/probe_filtering.yaml
 Allows to define criteria to filter probes from the analysis.
@@ -121,12 +121,7 @@ separated text file, with phenotypes and other variables of interest as columns,
 Sample\_names\_column should correspond to a subset of sample names of the original GenomeStudio file.
 It is used to match phenotypes to samples, so it is important for it to be correct.
 
-###### 6. Configs/analysis_samples.txt
-Includes a list of samples, line by line, to be included in the analysis.
-
-In most cases the same as preprocessing_samples.txt
-
-###### 7. Configs/analysis.yaml
+###### 6. Configs/analysis.yaml
 
 There are currently 2 analysis options, wilcoxon test and linear regression model (more tests will be added in the future).
 

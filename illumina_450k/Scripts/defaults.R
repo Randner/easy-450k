@@ -11,7 +11,6 @@ defaults$analyzed_path <- "Results/analyzed_dataset.RData"
 defaults$probe_filetring_config_path <- "Configs/probe_filtering.yaml"
 defaults$normalization_config_path <- "Configs/normalization.yaml"
 defaults$sample_list_path <- "Configs/analysis_samples.txt"
-defaults$preprocessing_sample_list_path <- "Configs/preprocessing_samples.txt"
 defaults$bmiq_config_path <- "Configs/bmiq.yaml"
 defaults$combat_config_path <- "Configs/combat.yaml"
 defaults$analysis_config_path <- "Configs/analysis.yaml"
@@ -23,7 +22,6 @@ defaults$txt_to_methylumi_default <- Curry(txt_to_methylumi, continue_without_co
 defaults$filter_config_params <- get_filtering_params(defaults$probe_filetring_config_path)
 defaults$normalization_config_params <- get_normalization_params(defaults$normalization_config_path)
 defaults$filter_samples_default <- Curry(filter_samples, samples_list_path=defaults$sample_list_path)
-defaults$preprocessing_filter_samples_default <- Curry(filter_samples, samples_list_path=defaults$preprocessing_sample_list_path)
 defaults$filter_probes_default <- Curry(filter_probes, config=defaults$filter_config_params)
 defaults$normalize_default <- Curry(normalize, config=defaults$normalization_config_params)
 
