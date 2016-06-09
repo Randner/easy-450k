@@ -9,7 +9,7 @@ bmiq <- function(ml_object, bmiq_config) {
     design_probes <- .get_probe_types(ml_object)
     beta_values <- .get_betas(ml_object)
 	
-	if bmiq_on {
+	if (bmiq_on) {
 		if(n_cores > 1) {
 			doMC::registerDoMC(n_cores)
         }
