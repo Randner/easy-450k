@@ -1,3 +1,4 @@
+bmiq_on: true
 seed: 100
 nfit: 50000
 n_cores: 30
